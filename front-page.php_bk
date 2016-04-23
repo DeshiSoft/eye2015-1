@@ -1,0 +1,41 @@
+<?php
+/**
+ * Template Name: Home, no sidebar
+ *
+ * A custom page template without sidebar.
+ *
+ * The "Template Name:" bit above allows this to be selectable
+ * from a dropdown menu on the edit page screen.
+ *
+ * @package WordPress
+ * @subpackage EYE_2015
+ * @since EYE 2015 1.0
+ */
+
+get_header(); ?>
+<div class="homestyle">
+<div class="container">
+	<div class="row">
+    	<div class="col-md-12">
+			<?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
+                <?php the_content(); ?>
+                <?php edit_post_link( __( '<span class="glyphicon glyphicon-erase"></span> Edit', 'eye2015' ), '', '' ); ?>
+            <?php endwhile; // end of the loop. ?>            
+		</div><!-- .col -->
+    </div><!-- .row  -->
+</div><!-- .container -->
+</div>
+<br/>
+<div class="container">
+  <div class="row">
+    <div class="col-md-5">
+      <img class="img-responsive center-block" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
+    </div>
+    <div class="col-md-7">
+      <h2>First featurette heading. <span class="text-muted">It'll blow your mind.</span></h2>
+      <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+    </div>
+  </div>
+</div>
+<br/>
+<?php get_footer(); ?>
